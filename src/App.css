@@ -1,0 +1,104 @@
+/* website font family */
+
+.mukta-malar-extralight {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.mukta-malar-light {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.mukta-malar-regular {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25rem;
+  color: rgb(240, 240, 240)
+}
+
+.mukta-malar-medium {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.mukta-malar-semibold {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.mukta-malar-bold {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.mukta-malar-extrabold {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: beige
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* website settings */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* home page settings */
+
+.home {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.base-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    line-height: 0;
+}
+
+.top-text {
+    position: absolute;
+    bottom: 20%;            
+    left: 50%;
+    transform: translateX(-50%);  
+    width: 100%;
+    text-align: center;
+    font-size: clamp(3.5rem, 5vw, 4.5rem);
+    color: white;
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-text p {
+    position: absolute;
+    bottom: 0.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
