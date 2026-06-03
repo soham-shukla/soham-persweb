@@ -63,7 +63,28 @@ img {
 
 body {
   width: 100%;
+  background-color: black;
   overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+}
+
+:root {
+  min-height: 100vh;
+  background-color: black;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* home page settings */

@@ -11,6 +11,7 @@ export const Background = styled.div`
     box-sizing: border-box;
     display: flex;
     position: relative;
+    min-height: "100vh",
 `
 
 export const Centered = styled.div`

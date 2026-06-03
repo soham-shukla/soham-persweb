@@ -24,6 +24,17 @@ const pageWrapper = {
     justifyContent: "center",
     color: "#fff",
 };
+const tickMarksStyle = {
+    position: "absolute",
+    left: "50%",
+    top: 0, 
+    bottom: 0,
+    width: "20px", 
+    transform: "translateX(-50%)",
+    backgroundImage: "linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)",
+    backgroundSize: "100% 80px",   
+    zIndex: 1, 
+};
 
 const timelineContainer = {
     position: "relative",
@@ -103,6 +114,7 @@ const companyStyle = {
 const descStyle = {
     margin: 0,
     fontSize: "0.95rem",
+    whiteSpace: "pre-line",
     lineHeight: "1.6",
     opacity: 0.8,
 };
@@ -148,25 +160,25 @@ const careerData = [
         year: "May 2026 - Present",
         title: "AI Curriculum Assistant",
         company: "Code Ninjas | Naperville, IL",
-        description: " Spearheaded a 6-week program empowering youth to use generative AI as a creative multi-tool, providing students through hands-on projects emphasizing human-AI collaboration.",
+        description: "• spearheaded a 6-week program empowering youth to use generative AI as a creative multi-tool, providing students through hands-on projects emphasizing human-AI collaboration.",
     },
     {
         year: "January 2026 - Present",
         title: "Research Assistant",
         company: "Wang Research Lab | University of Illinois",
-        description: "Designed a high-throughput bioinformatics pipeline to identify exclusive rRNA fragments on activated M1 macrophages"
+        description: "• designed a high-throughput bioinformatics pipeline utilizing Python, Bowtie2, and RNAfold to identify exclusive rRNA fragments on activated M1 macrophages \n• developed automated data processing scripts using pandas and pysam to perform targeted sequence alignment, extract mapping coordinates, and calculate secondary structures"
     },
         {
         year: "June 2023 - August 2025",
         title: "Junior Tennis Instructor",
         company: "Five Star Tennis Center | Plainfield, IL",
-        description: "taught tennis"
+        description: "• mentored youth by developing students’ technical abilities, athleticism, and sportsmanship, guiding them through structured developmental pathways. \n• demonstrated consistent professionalism through collaboration with students, staff, and parents to cultivate a supportive and growth-oriented environment."
     },
     {
         year: "June 2022 - May 2026",
         title: "Mathematics & Computer Science Intern",
         company: "Argonne National Laboratory | Lemont, IL",
-        description: "a whole lot"
+        description:  "• collaborated with post-graduate researchers as a high school intern in the Rapid Prototyping Lab to develop automated biology protocols leveraging robotic systems and machine learning models \n• performed antimicrobial research using BV-BRC datasets and API tools, gaining experience in large-scale bioinformatic pipelines and data analysis \n• designed a Retrieval-Augmented Generation model featuring OCR-enhanced document retrieval to optimize the accessibility of scientific publications \n• constructed a Model Context Protocol server to facilitate natural language querying of the BV-BRC API through integrated RAG workflows."
     },
 
 ];
@@ -183,6 +195,7 @@ export default function CareerTimeline(){
                     <div style = {timelineHeader}>
                         <p> present</p>
                     </div>
+                    <div style = {tickMarksStyle} />
                     <div style = {backgroundLine}/>
                     <motion.div style = {{
                         ... activeLine,
