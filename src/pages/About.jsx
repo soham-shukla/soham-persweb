@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Background, Centered } from '../StyledComponents';
 import '../App.css'; 
 
+// terminal-design
+
 export function TerminalHeader({ onComplete }) {
     const [step, setStep] = useState(1);
 
@@ -84,6 +86,16 @@ function Cursor() {
     );
 }
 
+// helper-function
+function TerminalRow({ label, children }) {
+    return (
+        <div style={rowWrapper}>
+            <span style={rowLabel}>{label}:</span>
+            <span style={rowContent}>{children}</span>
+        </div>
+    );
+}
+
 // output
 
 function About() {
@@ -91,7 +103,7 @@ function About() {
 
     return (
         <Background> 
-            <div style= {contentLayout}>
+            <div style={contentLayout}>
                 <TerminalHeader onComplete={() => setShowBio(true)} />
 
                 <AnimatePresence>
@@ -116,37 +128,49 @@ function About() {
                                 <p>some more about me:</p>
                             </div>
 
-                            <div style={educationContainer}>
-                                <Centered> <h2>education</h2> </Centered>
-                                <p> i'm studying computer engineering at the university of illinois @ urbana-champaign. currently a sophomore. <br/> <br/>
-                                    started: fall 2025. expected graduation: fall 2029. <br/> <br/>
-                                    previous coursework: computer programming & systems, both introductions to computing & electronics, linear algebra, differential equations, physics: mechanics & electricty + magnetism, and the ECE honors design lab. <br/> <br/>
-                                    current coursework: data structures, analog systems, discrete math, digital systems lab, quantum & thermal physics <br/><br/> 
-                                    outside of class, i've been involved with ACM @ UIUC, EOB @ UIUC, and ISSA @ UIUC. <br/><br/>
-                                    i also work as an undergraduate researcher in the Dr. Hua Wang Lab. my work there focuses on researching the RNA receptors on cell surfaces <br/><br/>
-                                    side note, i have a personal interest in applying advancements in computing and AI towards medicine and drug discovery. <br/> <br/>working on a minor in bioengineering <br/><br/>
-                                    awards: dean's list (x2), James Scholar, AP scholar with distinction, national merit scholar, ISAC state scholar, graduated high school magna cum laude, etc. <br/><br/>
-                                </p>
-                                <Centered> <h2> passions </h2></Centered>
-                                <p> 
-                                    you can typically find me at the gym. i lift, hoop, play tennis & pickleball, and i'm trying to get into running too. <br/><br/>
-                                    i love music. i did band, played guitar, and i'm trying to pick up producing <br/><br/>
-                                    also love to travel and be outside. especially national parks. trying to visit all 63, and already ~40 down. <br/><br/>
-                                    taco bell enthusiast <br/><br/>
-                                </p>
-                                <Centered> <h2> skills </h2></Centered>
-                                <p>
-                                    programming: C, C++, Python, Java, JS, HTML/CSS, Assembly <br/><br/>
-                                    tools/frameworks: React, Vite, Git, Google Suite, Microsoft Office <br/><br/>
-                                    hardware: analog & digital circuit design, FSMs, soldering, osciloscopes, etc. <br/><br/>
-                                    languages: english (native), spanish, hindi, gujurati, marathi... to some degree <br/><br/>
-                                    also pretty good at just figuring things out one way or another :) <br/><br/>
-                                </p>
-                                <Centered> <h2> gallery </h2></Centered>
+                            <div style={sectionContainer}>
+                                <h2 style={sectionHeading}>~/education</h2>
+                                
+                                <TerminalRow label="major">computer engineering, b.s.</TerminalRow>
+                                <TerminalRow label="minor">bioengineering</TerminalRow>
+                                <TerminalRow label="university">university of illinois @ urbana-champaign (exp. fall 2029)</TerminalRow>
+                                <TerminalRow label="research">undergraduate researcher @ dr. hua wang lab (rna receptors & bio-ai). applying computing advancements towards medicine and drug discovery.</TerminalRow>
+                                <TerminalRow label="involvement">acm @ uiuc, eob @ uiuc, issa @ uiuc</TerminalRow>
+                                <TerminalRow label="current_classes">data structures, analog systems, discrete math, digital systems lab, quantum & thermal physics</TerminalRow>
+                                <TerminalRow label="past_classes">computing & electronics intros, linear algebra, diff eq, physics (e&m), ece honors design lab</TerminalRow>
+                                <TerminalRow label="awards">dean's list (x2), james scholar, national merit scholar, ap scholar w/ distinction, isac state scholar</TerminalRow>
+                            </div>
 
-                                <div style={menuContainer}>
-                                    <Centered> <h2> where to?</h2> </Centered>
-                                    
+                            <div style={sectionContainer}>
+                                <h2 style={sectionHeading}>~/skills</h2>
+                                
+                                <TerminalRow label="software">C, C++, Python, Java, JS, HTML/CSS, Assembly</TerminalRow>
+                                <TerminalRow label="hardware">analog & digital circuit design, FSMs, soldering, oscilloscopes</TerminalRow>
+                                <TerminalRow label="frameworks">React, Vite, Git, Google Suite</TerminalRow>
+                                <TerminalRow label="spoken">english (native), spanish, hindi, gujarati, marathi</TerminalRow>
+                                <TerminalRow label="bonus">pretty good at just figuring things out one way or another </TerminalRow>
+                            </div>
+
+                            <div style={sectionContainer}>
+                                <h2 style={sectionHeading}>~/passions</h2>
+                                
+                                <TerminalRow label="athletics">lifting, hooping, tennis, pickleball, and getting into running</TerminalRow>
+                                <TerminalRow label="music">band, choir, learning guitar, and hoping to pick up producing</TerminalRow>
+                                <TerminalRow label="travel">trying to visit all 63 national parks (~40 down so far)</TerminalRow>
+                                <TerminalRow label="bonus">taco bell enthusiast</TerminalRow>
+                            </div>
+
+                            <div style={sectionContainer}>
+                                <h2 style={sectionHeading}>~/gallery</h2>
+                                {/* still need to finish gallery scroll wheel */}
+                                <div style={{ height: "100px", border: "1px dashed rgba(255, 255, 255, 0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#888", fontFamily: "monospace" }}>
+                                    [ gallery module pending ]
+                                </div>
+                            </div>
+
+                            <div style={menuContainer}>
+                                <h2 style={sectionHeading}>~/system/navigate</h2>
+                                <Centered>
                                     <div style={menuList}>
                                         <div style={menuRow}>
                                             <span>what i've done?</span>
@@ -161,21 +185,21 @@ function About() {
                                             <a href="/contact" style={menuLink}>see contact.</a>
                                         </div>
                                     </div>
-                                </div>
+                                </Centered>
+
                             </div>
 
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
- 
         </Background>
     );
 }
 
 export default About;
 
-// component-styles
+// component-styles 
 
 const charVariants = {
     visible: { opacity: 1, display: "inline-block" },
@@ -209,7 +233,7 @@ const dotContainer = { display: "flex", gap: "6px", position: "absolute", left: 
 const macDot = { width: "12px", height: "12px", borderRadius: "50%" };
 
 const terminalTitle = {
-    color: "#fff",
+    color: "#ffffffff",
     opacity: 0.5,
     fontFamily: "monospace",
     fontSize: "0.8rem",
@@ -234,7 +258,7 @@ const lineWrapper = {
     width: "100%",
 };
 
-const promptPrefix = { color: "#27c93f", marginRight: "8px" };
+const promptPrefix = { color: "#69c469ff", marginRight: "8px" };
 const typeText = { color: "#fff", opacity: 0.9 };
 const cursorStyle = { display: "inline-block", marginLeft: "4px", color: "#fff", opacity: 0.8 };
 
@@ -246,8 +270,6 @@ const contentLayout = {
     alignItems: "center", 
     width: "100%",
 };
-
-// textbox-styles 
 
 const expandingWrapper = {
     width: "100%",
@@ -265,22 +287,51 @@ const bioTextContainer = {
     color: "#fff",
     opacity: 0.8,
     lineHeight: "1.8",
-    fontFamily: "monospace",
-    fontSize: "0.95rem",
+    fontSize: "1.1rem", 
     whiteSpace: "pre-line",
     paddingBottom: "40px", 
 };
 
-const educationContainer = {
+
+const sectionContainer = {
     width: "100%",
-    padding: "0", 
-    boxSizing: "border-box",
-    paddingBottom: "60px",
+    paddingBottom: "50px",
+};
+
+const sectionHeading = {
+    color: "#fff",
+    fontSize: "1.6rem", 
+    fontWeight: "normal",
+    letterSpacing: "1px",
+    margin: "0 0 20px 0",
+    paddingBottom: "10px",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.15)", 
+    textAlign: "left",
+};
+
+const rowWrapper = {
+    display: "flex",
+    alignItems: "flex-start",
+    marginBottom: "12px",
+    lineHeight: "1.6",
+    fontSize: "1.1rem",
+};
+
+const rowLabel = {
+    color: "#fefbfbaa", 
+    minWidth: "160px", 
+    fontWeight: "bold",
+    flexShrink: 0,
+};
+
+const rowContent = {
+    color: "#d1d5db", 
+    flex: 1,
 };
 
 const menuContainer = {
     width: "100%",
-    paddingBottom: "60px",
+    paddingBottom: "80px",
 };
 
 const menuList = {
@@ -288,7 +339,7 @@ const menuList = {
     flexDirection: "column",
     gap: "16px", 
     width: "100%",
-    maxWidth: "900px", 
+    maxWidth: "450px", 
     fontFamily: "monospace",
     fontSize: "0.95rem",
     color: "#fff",
@@ -297,12 +348,14 @@ const menuList = {
 const menuRow = {
     display: "flex",
     justifyContent: "space-between", 
-    alignItems: "right",
+    alignItems: "center",
     opacity: 0.8,
+    borderBottom: "1px dashed rgba(255, 255, 255, 0.15)",
+    paddingBottom: "6px",
 };
 
 const menuLink = {
-    color: "#27c93f",
+    color: "#ccd3cdff",
     textDecoration: "none",
     cursor: "pointer",
     transition: "opacity 0.2s ease",

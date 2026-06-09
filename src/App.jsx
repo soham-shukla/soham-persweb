@@ -4,7 +4,7 @@ import {HideMainHeader} from './components/Header';
 import './App.css'; 
 import ResetScroll from './components/ResetScroll';
 import Footer from './components/Footer';
-import About from './pages/About';
+import About from './pages/about';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
