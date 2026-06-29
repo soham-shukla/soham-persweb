@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Career from './pages/Career';
-import WangLab from './pages/projects/WangLab';
+import DriveSafe from './pages/projects/DriveSafe';
 
 
 
@@ -29,7 +29,7 @@ function Layout(){
         <Route path = "/Projects" element={<Projects/>} />
         <Route path = "/Contact" element={<Contact/>} />
         <Route path = "/Career" element={<Career/>} />
-        <Route path = "/Projects/wanglab" element = {<WangLab/>} />
+        <Route path = "/Projects/drivesafe" element = {<DriveSafe/>} />
       </Routes>
 
         <Footer />

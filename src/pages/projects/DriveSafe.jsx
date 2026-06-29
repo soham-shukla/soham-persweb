@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
-// note: this page currently contains the information for project titled DriveSafe. will be updated soon
-
 export default function ProjectDetail() {
     return (
         <div style={pageLayout}>
@@ -65,31 +63,30 @@ export default function ProjectDetail() {
 
             <hr style={divider} />
 
-            {/* === 5. DETAILS & IMAGES THROUGHOUT === */}
             <main style={detailsContainer}>
                 
-                {/* Detail Block 1 */}
+                {/* detail 1*/}
                 <div style={detailBlock}>
                     <h3 className="mukta-malar-medium" style={subHeading}>01 / architecture & fsm design</h3>
                     <p className="mukta-malar-light" style={bodyText}>
                         The core logic relies on a speed-tracking state machine. Rather than using traditional IR sensors which suffer from ambient light interference, we pivoted to potentiometers and ultrasonic distance tracking to maintain signal integrity.
                     </p>
                     
-                    {/* Inline Image */}
+                    {/* image 1 */}
                     <div style={inlineImageWrapper}>
                         <img src="/path-to-fsm-diagram.png" alt="FSM State Diagram" style={imageFill} />
                         <span className="mukta-malar-extralight" style={caption}>Fig 1.0 — Speed tracking finite state machine logic flow.</span>
                     </div>
                 </div>
 
-                {/* Detail Block 2 */}
+                {/* detail 2 */}
                 <div style={detailBlock}>
                     <h3 className="mukta-malar-medium" style={subHeading}>02 / subcircuit calibration</h3>
                     <p className="mukta-malar-light" style={bodyText}>
                         To handle the alert outputs, the FSM connects directly to a MOSFET gate rather than the internal oscillator. This allowed precise control over the alarm subcircuit pulse widths without overloading the 555 timers.
                     </p>
 
-                    {/* Inline Image Grid (Two pics side by side) */}
+                    {/* image 2*/}
                     <div style={imageRow}>
                         <div style={halfImage}>
                             <img src="/path-to-breadboard1.jpg" alt="Breadboard wiring" style={imageFill} />
@@ -107,9 +104,6 @@ export default function ProjectDetail() {
     );
 }
 
-// ==========================================
-// LAYOUT & WRAPPERS
-// ==========================================
 
 const pageLayout = {
     display: "flex",
@@ -213,10 +207,6 @@ const caption = {
     marginTop: "8px",
     textAlign: "center",
 };
-
-// ==========================================
-// CONTENT & TYPOGRAPHY
-// ==========================================
 
 const overviewGrid = {
     display: "flex",
