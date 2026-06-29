@@ -22,7 +22,7 @@ function Projects() {
                     title="soham-persweb" 
                     subtitle="may 2026"
                     imageSrc= "src/assets/gemini_code_cover_2.png"
-                    link="/projects/car"
+                    link="/projects/persweb"
                 />
                 <ImageButton 
                     index={1}
@@ -31,7 +31,7 @@ function Projects() {
                     title="wang-lab" 
                     subtitle="jan 2026 - present"
                     imageSrc="src/assets/gemini_lab_cover.png" 
-                    link="/projects/bio"
+                    link="/projects/wanglab"
                 />
                 <ImageButton 
                     index={2}
@@ -40,7 +40,7 @@ function Projects() {
                     title="drive-safe" 
                     subtitle="jan 2026 - may 2026"
                     imageSrc="src/assets/gemini_ecelab_cover.png"
-                    link="/projects/web"
+                    link="/projects/drivesafe"
                 />
             </div>
             
@@ -58,7 +58,7 @@ function Projects() {
                     title="bvbrc-mcp" 
                     subtitle="jan 2026"
                     imageSrc="src/assets/gemini_code_cover_3.png"
-                    link="/projects/car"
+                    link="/projects/bvbrc"
                 />
                 <ImageButton 
                     index={4}
@@ -67,7 +67,7 @@ function Projects() {
                     title="chip-defects" 
                     subtitle="nov 2025 - dec 2025"
                     imageSrc="src/assets/gemini_code_cover.png"
-                    link="/projects/bio"
+                    link="/projects/chipdefects"
                 />
                 <ImageButton 
                     index={5} 
@@ -76,7 +76,7 @@ function Projects() {
                     title="val-challenge" 
                     subtitle="jan 2024 - march 2024"
                     imageSrc="src/assets/gemini_stock_cover.png"
-                    link="/projects/web"
+                    link="/projects/valchal"
                 />
             </div>
 

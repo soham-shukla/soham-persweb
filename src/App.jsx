@@ -4,11 +4,12 @@ import {HideMainHeader} from './components/Header';
 import './App.css'; 
 import ResetScroll from './components/ResetScroll';
 import Footer from './components/Footer';
-import About from './pages/about';
+import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Career from './pages/Career';
+import WangLab from './pages/projects/WangLab';
 
 
 
@@ -28,6 +29,7 @@ function Layout(){
         <Route path = "/Projects" element={<Projects/>} />
         <Route path = "/Contact" element={<Contact/>} />
         <Route path = "/Career" element={<Career/>} />
+        <Route path = "/Projects/wanglab" element = {<WangLab/>} />
       </Routes>
 
         <Footer />

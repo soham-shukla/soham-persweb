@@ -133,11 +133,11 @@ function About() {
                                 
                                 <TerminalRow label="major">computer engineering, b.s.</TerminalRow>
                                 <TerminalRow label="minor">bioengineering</TerminalRow>
-                                <TerminalRow label="university">university of illinois @ urbana-champaign (exp. fall 2029)</TerminalRow>
-                                <TerminalRow label="research">undergraduate researcher @ dr. hua wang lab (rna receptors & bio-ai). applying computing advancements towards medicine and drug discovery.</TerminalRow>
+                                <TerminalRow label="university">university of illinois @ urbana-champaign (exp. fall 2028)</TerminalRow>
+                                <TerminalRow label="research">undergraduate researcher @ dr. hua wang labs</TerminalRow>
                                 <TerminalRow label="involvement">acm @ uiuc, eob @ uiuc, issa @ uiuc</TerminalRow>
-                                <TerminalRow label="current_classes">data structures, analog systems, discrete math, digital systems lab, quantum & thermal physics</TerminalRow>
-                                <TerminalRow label="past_classes">computing & electronics intros, linear algebra, diff eq, physics (e&m), ece honors design lab</TerminalRow>
+                                <TerminalRow label="current classes">data structures, analog systems, discrete math, digital systems lab, quantum & thermal physics</TerminalRow>
+                                <TerminalRow label="past classes">computing & electronics intros, linear algebra, diff eq, physics (e&m), ece honors design lab</TerminalRow>
                                 <TerminalRow label="awards">dean's list (x2), james scholar, national merit scholar, ap scholar w/ distinction, isac state scholar</TerminalRow>
                             </div>
 
@@ -148,7 +148,6 @@ function About() {
                                 <TerminalRow label="hardware">analog & digital circuit design, FSMs, soldering, oscilloscopes</TerminalRow>
                                 <TerminalRow label="frameworks">React, Vite, Git, Google Suite</TerminalRow>
                                 <TerminalRow label="spoken">english (native), spanish, hindi, gujarati, marathi</TerminalRow>
-                                <TerminalRow label="bonus">pretty good at just figuring things out one way or another </TerminalRow>
                             </div>
 
                             <div style={sectionContainer}>
@@ -157,19 +156,18 @@ function About() {
                                 <TerminalRow label="athletics">lifting, hooping, tennis, pickleball, and getting into running</TerminalRow>
                                 <TerminalRow label="music">band, choir, learning guitar, and hoping to pick up producing</TerminalRow>
                                 <TerminalRow label="travel">trying to visit all 63 national parks (~40 down so far)</TerminalRow>
-                                <TerminalRow label="bonus">taco bell enthusiast</TerminalRow>
                             </div>
 
                             <div style={sectionContainer}>
                                 <h2 style={sectionHeading}>~/gallery</h2>
                                 {/* still need to finish gallery scroll wheel */}
                                 <div style={{ height: "100px", border: "1px dashed rgba(255, 255, 255, 0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "#888", fontFamily: "monospace" }}>
-                                    [ gallery module pending ]
+                                    [ gallery module otw ]
                                 </div>
                             </div>
 
                             <div style={menuContainer}>
-                                <h2 style={sectionHeading}>~/system/navigate</h2>
+                                <h2 style={sectionHeading}>~/nav</h2>
                                 <Centered>
                                     <div style={menuList}>
                                         <div style={menuRow}>
@@ -258,7 +256,7 @@ const lineWrapper = {
     width: "100%",
 };
 
-const promptPrefix = { color: "#69c469ff", marginRight: "8px" };
+const promptPrefix = { color: "#3dbb3dff", marginRight: "8px" };
 const typeText = { color: "#fff", opacity: 0.9 };
 const cursorStyle = { display: "inline-block", marginLeft: "4px", color: "#fff", opacity: 0.8 };
 
@@ -318,7 +316,7 @@ const rowWrapper = {
 };
 
 const rowLabel = {
-    color: "#fefbfbaa", 
+    color: "#ffffffbe", 
     minWidth: "160px", 
     fontWeight: "bold",
     flexShrink: 0,
@@ -348,7 +346,7 @@ const menuList = {
 const menuRow = {
     display: "flex",
     justifyContent: "space-between", 
-    alignItems: "center",
+    alignItems: "left",
     opacity: 0.8,
     borderBottom: "1px dashed rgba(255, 255, 255, 0.15)",
     paddingBottom: "6px",
