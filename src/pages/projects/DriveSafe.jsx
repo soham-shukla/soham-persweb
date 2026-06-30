@@ -9,7 +9,7 @@ export default function ProjectDetail() {
                 <Link to="/Projects" className="mukta-malar-light" style={backLink}>
                     &larr; back to projects
                 </Link>
-            </div>
+            </div>  
 
             <header style={headerSection}>
                 <span className="mukta-malar-light" style={metaTags}>./projects </span>

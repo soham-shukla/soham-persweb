@@ -1,6 +1,9 @@
 import { DateHeader } from '../components/Header';
 import  Footer  from '../components/Footer';
 import HomeScreen from '../assets/IMG_5845.jpeg';
+import IG from '../assets/instagram-white-icon.png'
+import GH from '../assets/github-white-icon.png'
+import LD from '../assets/linkedin-app-white-icon.png'
 import '../App.css';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
@@ -179,7 +182,64 @@ const titleStyle = {
     fontWeight: "normal",
 };
 
+// image - link icons
 
+function GithubLink() {
+    return (
+        <a href="https://github.com/soham-shukla" target="_blank" rel="noreferrer">
+            <img src={GH} alt="github link" style={iconStyle} />
+        </a>
+    );
+}
+
+function InstaLink() {
+    return (
+        <a href="https://www.instagram.com/sohamshukla_/" target="_blank" rel="noreferrer">
+            <img src={IG} alt="instagram link" style={iconStyle} />
+        </a>
+    );
+}
+
+function LinkedInLink() {
+    return (
+        <a href="https://www.linkedin.com/in/soham-m-shukla/" target="_blank" rel="noreferrer">
+            <img src={LD} alt="linkedin link" style={iconStyle} />
+        </a>
+    );
+}
+
+
+const socialContainer = {
+    display: "flex",
+    justifyContent: "center", 
+    alignItems: "center",
+    gap: "32px",            
+    width: "100%",
+    paddingTop: "40px",       
+    paddingBottom: "60px",    
+    lineHeight: "normal",     
+    position: "relative",     
+    zIndex: 10,               
+};
+
+const iconStyle = {
+    width: "30px", 
+    height: "30px",
+    opacity: 0.6,
+    cursor: "pointer",
+    transition: "opacity 0.2s ease",
+};
+
+function Socials(){
+    return( 
+        <div style={socialContainer}>
+            <GithubLink />
+            <InstaLink />
+            <LinkedInLink />
+        </div>
+    )
+
+}
 // output 
 
 function Home(){
@@ -202,11 +262,14 @@ function Home(){
                 <ScrollMenu />
             </div>
             <div>
-                <Background style = {{ zIndex: 3,}}>
+            
+                <Background style = {{ zIndex: 3, flexDirection: "column", width: "100%"}}>
+                    <Socials/>
                     <Footer/>
                 </Background>
             </div>
         </div>
+
     )
 }
 
