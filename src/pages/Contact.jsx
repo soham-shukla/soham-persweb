@@ -8,7 +8,10 @@ export default function Contact() {
 
     return (
         <div style={pageWrapper}>
+            <h1 className="mukta-malar-bold" style={pageTitle}>contact.</h1> <p/>
+
             <div style={scrollSection}>
+
                 <motion.div 
                     initial="offscreen"
                     whileInView="onscreen"
@@ -64,16 +67,22 @@ export default function Contact() {
 
 // page-styles
 
-const pageWrapper = { position: 'relative', width: "100%", backgroundColor: "#000" };
+const pageWrapper = { 
+    position: 'relative', 
+    minHeight: "100vh",
+    width: "100%", 
+    backgroundColor: "#000",
+    padding: "100px 20px",   
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",    
+};
 
 const scrollSection = { 
-    position: 'relative', 
-    minHeight: "100vh", 
-    padding: "100px 20px", 
+    width: "100%",
     display: "flex", 
-    zIndex: 3, 
     justifyContent: "center",
-    alignItems: "center", 
+    marginTop: "20px",    
 };
 
 const glassContainer = {
@@ -148,4 +157,13 @@ const cardVariants = {
         opacity: 1,
         transition: { type: "spring", bounce: 0.2, duration: 1 },
     },
+};
+
+const pageTitle = {
+    color: "#fff",
+    fontSize: "clamp(3rem, 5vw, 4rem)",
+    width: "100%",
+    maxWidth: "900px",
+    textAlign: "left",
+    marginBottom: "40px",
 };

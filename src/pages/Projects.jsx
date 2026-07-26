@@ -1,116 +1,60 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import '../App.css'; 
 
-//output 
+// project list
 
-function Projects() {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
+const projectData = [
+    { id: "diesel", number: "01", title: "diesel", subtitle: "july 2026", link: "/projects/diesel" },
+    { id: "persweb", number: "02", title: "pers-web", subtitle: "may 2026 - july 2026", link: "/projects/persweb" },
+    { id: "wanglab", number: "03", title: "wang-lab", subtitle: "jan 2026 - present", link: "/projects/wanglab" },
+    { id: "drivesafe", number: "04", title: "drive-safe", subtitle: "jan 2026 - may 2026", link: "/projects/drivesafe" },
+    { id: "bvbrc", number: "05", title: "bvbrc-mcp", subtitle: "jan 2026", link: "/projects/bvbrc" },
+]
+// output 
 
+export default function Projects() {
     return (
-        <div style={pageLayout}> 
-
-            {/* row 1 */}
-            <div 
-                style={gridContainer}
-                onMouseLeave={() => setHoveredIndex(null)}
-            >
-                <ImageButton 
-                    index={0}
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
-                    title="soham-persweb" 
-                    subtitle="may 2026"
-                    imageSrc= "src/assets/gemini_code_cover_2.png"
-                    link="/projects/persweb"
-                />
-                <ImageButton 
-                    index={1}
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
-                    title="wang-lab" 
-                    subtitle="jan 2026 - present"
-                    imageSrc="src/assets/gemini_lab_cover.png" 
-                    link="/projects/wanglab"
-                />
-                <ImageButton 
-                    index={2}
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
-                    title="drive-safe" 
-                    subtitle="jan 2026 - may 2026"
-                    imageSrc="src/assets/gemini_ecelab_cover.png"
-                    link="/projects/drivesafe"
-                />
-            </div>
+        <div style={pageLayout}>
+            <h1 className="mukta-malar-bold" style={pageTitle}>projects.</h1>
             
-            <div style={{ height: "24px", width: "100%" }} />
-            
-            {/* row 2  */}
-            <div 
-                style={gridContainer}
-                onMouseLeave={() => setHoveredIndex(null)}
-            >
-                <ImageButton 
-                    index={3}
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
-                    title="bvbrc-mcp" 
-                    subtitle="jan 2026"
-                    imageSrc="src/assets/gemini_code_cover_3.png"
-                    link="/projects/bvbrc"
-                />
-                <ImageButton 
-                    index={4}
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
-                    title="chip-defects" 
-                    subtitle="nov 2025 - dec 2025"
-                    imageSrc="src/assets/gemini_code_cover.png"
-                    link="/projects/chipdefects"
-                />
-                <ImageButton 
-                    index={5} 
-                    hoveredIndex={hoveredIndex}
-                    setHoveredIndex={setHoveredIndex}
-                    title="val-challenge" 
-                    subtitle="jan 2024 - march 2024"
-                    imageSrc="src/assets/gemini_stock_cover.png"
-                    link="/projects/valchal"
-                />
+            <div style={uniformGrid}>
+                {projectData.map((proj) => (
+                    <BentoCard 
+                        key={proj.id}
+                        number={proj.number}
+                        title={proj.title}
+                        subtitle={proj.subtitle}
+                        link={proj.link}
+                    />
+                ))}
             </div>
-
         </div>
     );
 }
 
-// helper-functions
+// card components
 
-function ImageButton({ title, subtitle, imageSrc, link, index, hoveredIndex, setHoveredIndex }) {
-    const isHovered = hoveredIndex === index;
-    const isAnotherHovered = hoveredIndex !== null && hoveredIndex !== index;
-
+function BentoCard({ title, subtitle, number, link }) {
     return (
         <motion.a 
             href={link}
-            onMouseEnter={() => setHoveredIndex(index)}
-            animate={{
-                flex: isHovered ? 3 : isAnotherHovered ? 0.5 : 1,
-                filter: isAnotherHovered ? "brightness(0.3) grayscale(0.8)" : "brightness(0.9) contrast(1.1) grayscale(0)",
-            }}
-            transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} 
             style={cardWrapper}
+            initial="idle"
+            whileHover="hover"
         >
-            <motion.img 
-                src={imageSrc} 
-                alt={title} 
-                style={cardImage} 
-                animate={{ scale: isHovered ? 1.05 : 1 }}
+            {/* numbers*/}
+            <motion.div 
+                style={numberTexture}
+                variants={{
+                    idle: { opacity: 0.03, scale: 1, x: 0 },
+                    hover: { opacity: 0.08, scale: 1.05, x: -10 } 
+                }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-            />
-            
-            <div style={gradientOverlay} />
+            >
+                {number}
+            </motion.div>
 
+            {/* content */}
             <div style={textContainer}>
                 <h3 className="mukta-malar-semibold" style={cardTitle}>{title}</h3>
                 <span className="mukta-malar-light" style={cardSubtitle}>{subtitle}</span>
@@ -119,79 +63,78 @@ function ImageButton({ title, subtitle, imageSrc, link, index, hoveredIndex, set
     );
 }
 
-// page-styles
+// styles
 
 const pageLayout = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     width: "100%",
-    padding: "60px 20px", 
+    padding: "80px 20px", 
 };
 
-const gridContainer = {
-    display: "flex",
-    justifyContent: "space-between",
-    gap: "24px", 
+const pageTitle = {
+    color: "#fff",
+    fontSize: "clamp(3rem, 5vw, 4rem)",
     width: "100%",
     maxWidth: "900px",
+    textAlign: "left",
+    marginBottom: "40px",
 };
 
-// component-styles
+const uniformGrid = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)", 
+    gap: "24px",
+    width: "100%",
+    maxWidth: "1000px",
+};
+
+// --- Card Styles ---
 
 const cardWrapper = {
     position: "relative",
-    flex: 1,
-    height: "450px",
+    height: "280px", 
+    backgroundColor: "#050505", 
+    border: "1px solid rgba(255, 255, 255, 0.05)",
+    borderRadius: "12px",
     overflow: "hidden", 
     cursor: "pointer",
-    textDecoration: "none", 
-    backgroundColor: "#050505", 
+    textDecoration: "none",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end", 
+    padding: "30px",
 };
 
-const cardImage = {
+const numberTexture = {
     position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
+    bottom: "-30px",   
+    right: "-10px",    
+    fontSize: "14rem", 
+    lineHeight: "1",
+    fontWeight: "900",
+    fontFamily: "monospace", 
+    color: "#fff",
     zIndex: 0,
-};
-
-const gradientOverlay = {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    height: "50%", 
-    background: "linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%)",
-    zIndex: 1,
+    pointerEvents: "none", 
 };
 
 const textContainer = {
-    position: "absolute",
-    bottom: "20px",
-    width: "100%", 
+    position: "relative",
     zIndex: 2,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center", 
     gap: "4px",
-};
-
-const cardSubtitle = {
-    color: "#fff",
-    fontSize: "0.85rem",
-    opacity: 0.8,
-    textShadow: "1px 1px 4px rgba(0,0,0,0.8)",
 };
 
 const cardTitle = {
     color: "#fff",
-    fontSize: "1.8rem",
+    fontSize: "1.6rem",
     margin: 0,
-    textShadow: "2px 2px 8px rgba(0,0,0,0.8)", 
 };
 
-export default Projects;
+const cardSubtitle = {
+    color: "#888",
+    fontSize: "0.95rem",
+};

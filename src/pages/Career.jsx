@@ -21,9 +21,11 @@ const pageWrapper = {
     backgroundColor: "#000", 
     padding: "100px 20px",
     display: "flex",
-    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",    
     color: "#fff",
 };
+
 const tickMarksStyle = {
     position: "absolute",
     left: "50%",
@@ -191,6 +193,7 @@ export default function CareerTimeline(){
     return(
         <> 
             <div style = {pageWrapper} >
+                <h1 className="mukta-malar-bold" style={pageTitle}>career.</h1> <p/>
                 <div style = {timelineContainer} ref = {containerRef}>
                     <div style = {timelineHeader}>
                         <p> present</p>
@@ -211,3 +214,11 @@ export default function CareerTimeline(){
 
     );
 }
+const pageTitle = {
+    color: "#fff",
+    fontSize: "clamp(3rem, 5vw, 4rem)",
+    width: "100%",
+    maxWidth: "900px",
+    textAlign: "left",
+    marginBottom: "40px",
+};

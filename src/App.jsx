@@ -10,6 +10,10 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Career from './pages/Career';
 import DriveSafe from './pages/projects/DriveSafe';
+import Diesel from './pages/projects/Diesel';
+import WangLab from './pages/projects/WangLab';
+import PersWeb from './pages/projects/PersWeb';
+import Bvbrc from './pages/projects/Bvbrc';
 
 
 
@@ -30,6 +34,10 @@ function Layout(){
         <Route path = "/Contact" element={<Contact/>} />
         <Route path = "/Career" element={<Career/>} />
         <Route path = "/Projects/drivesafe" element = {<DriveSafe/>} />
+        <Route path = "/Projects/diesel" element = {<Diesel/>} />
+        <Route path = "/Projects/wanglab" element = {<WangLab/>} />
+        <Route path = "/Projects/persweb" element = {<PersWeb/>} />
+        <Route path = "/Projects/bvbrc" element = {<Bvbrc/>} />
       </Routes>
 
         <Footer />

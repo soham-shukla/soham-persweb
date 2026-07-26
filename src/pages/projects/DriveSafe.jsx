@@ -1,5 +1,8 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import fsmImage from '../../assets/drive_safe_fsm.png';
+import circuitImage from '../../assets/finaldrivesafe.png';
+import mainImage from '../../assets/drivesafedemo1.gif';
 
 export default function ProjectDetail() {
     return (
@@ -19,7 +22,7 @@ export default function ProjectDetail() {
                     {/*}  <a href="https://github.com/yourusername/repo" target="_blank" rel="noreferrer" className="mukta-malar-regular" style={btnStyle}>
                         [ github repo ]
                     </a> */}
-                    <a href="#" className="mukta-malar-regular" style={btnStyle}>
+                    <a href="https://docs.google.com/document/d/18sj_k81UuiqbHjKynH73bcQcj5jq__jPX1IMA4pWoJ0/edit?tab=t.x68x4w2ta77w" className="mukta-malar-regular" style={btnStyle}>
                         [ read paper ]
                     </a>
                 </div>
@@ -31,7 +34,7 @@ export default function ProjectDetail() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <img src="/path-to-wide-circuit-shot.jpg" alt="Drive Safe System" style={imageFill} />
+                <img src={mainImage} alt="Drive Safe System" style={imageFill} />
             </motion.div>
 
             <section style={overviewGrid}>
@@ -67,32 +70,33 @@ export default function ProjectDetail() {
                 
                 {/* detail 1*/}
                 <div style={detailBlock}>
-                    <h3 className="mukta-malar-medium" style={subHeading}>01 / architecture & fsm design</h3>
+                    <h3 className="mukta-malar-medium" style={subHeading}>01 / problem statement</h3>
                     <p className="mukta-malar-light" style={bodyText}>
-                        The core logic relies on a speed-tracking state machine. Rather than using traditional IR sensors which suffer from ambient light interference, we pivoted to potentiometers and ultrasonic distance tracking to maintain signal integrity.
+                        To combat the severe threat of distracted driving—which the FCC reports causes 3,725 deaths and 325,000 injuries annually when drivers divert their hands or eyes—our product utilizes a finite state machine with adaptive safeguards to continuously monitor driver attentiveness relative to vehicle speed. By integrating force-sensing resistors, ultrasonic sensors, and potentiometers to track hand presence, head orientation, dangerous swerving, and rapid speed changes, the system evaluates these inputs to trigger a reorienting audio alarm if distraction is detected.
                     </p>
                     
                     {/* image 1 */}
                     <div style={inlineImageWrapper}>
-                        <img src="/path-to-fsm-diagram.png" alt="FSM State Diagram" style={imageFill} />
+                        <img src={fsmImage} alt="FSM State Diagram" style={imageFill} />
                         <span className="mukta-malar-extralight" style={caption}>Fig 1.0 — Speed tracking finite state machine logic flow.</span>
                     </div>
                 </div>
 
                 {/* detail 2 */}
                 <div style={detailBlock}>
-                    <h3 className="mukta-malar-medium" style={subHeading}>02 / subcircuit calibration</h3>
+                    <h3 className="mukta-malar-medium" style={subHeading}>02 / project implementation</h3>
                     <p className="mukta-malar-light" style={bodyText}>
-                        To handle the alert outputs, the FSM connects directly to a MOSFET gate rather than the internal oscillator. This allowed precise control over the alarm subcircuit pulse widths without overloading the 555 timers.
+                        To implement our adaptive safeguards, we integrate Force Sensing Resistors (FSRs) to detect hand presence, an ultrasonic sensor governed by a 555 timer circuit to track head orientation, and a steering-mounted potentiometer to monitor unsafe wheel tilt. These sensor inputs are evaluated alongside a binary speed counter to generate a fault signal, which drives a custom finite state machine (FSM) through three distinct operational states: OK, WARN, and ALARM. Upon fault detection, the FSM transitions to the WARN state and initiates a speed-dependent countdown—drastically reducing the driver's grace period at higher speeds—using a multiplexer and a tolerance counter. If the fault persists beyond this countdown, the FSM latches into the ALARM state, triggering a MOSFET gate that releases an oscillating current to a buzzer to continuously reorient the driver until the system is manually reset.
                     </p>
 
                     {/* image 2*/}
                     <div style={imageRow}>
-                        <div style={halfImage}>
-                            <img src="/path-to-breadboard1.jpg" alt="Breadboard wiring" style={imageFill} />
+                        <div style={inlineImageWrapper}>
+                            <img src={circuitImage} alt="Drive Safe Circuit Diagram" style={diagramStyle} />
+                            <span className="mukta-malar-extralight" style={caption}>Fig 1.0 — Speed tracking finite state machine logic flow.</span>
                         </div>
                         <div style={halfImage}>
-                            <img src="/path-to-oscilloscope.jpg" alt="Oscilloscope readout" style={imageFill} />
+                            <img src="/path-to-oscilloscope.jpg" alt="Demonstration" style={imageFill} />
                         </div>
                     </div>
                     <span className="mukta-malar-extralight" style={caption}>Fig 2.0 — Physical breadboard implementation and oscilloscope frequency verification.</span>
@@ -184,6 +188,8 @@ const inlineImageWrapper = {
     width: "100%",
     margin: "24px 0",
     backgroundColor: "#111",
+    padding: "40px 20px", 
+    borderRadius: "8px",  
 };
 
 const imageRow = {
@@ -286,4 +292,11 @@ const bodyText = {
     lineHeight: "1.8",
     color: "#bbb",
     margin: 0,
+};
+
+const diagramStyle = {
+    maxWidth: "100%", // Shrinks on small screens, but won't stretch on large ones
+    height: "auto",   // Maintains perfect aspect ratio
+    display: "block",
+    margin: "0 auto", // Centers the diagram perfectly
 };
