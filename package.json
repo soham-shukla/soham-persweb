@@ -2,7 +2,7 @@
   "name": "soham-persweb",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://soham-shukla.github.io/soham-persweb",
+  "homepage": "https://sohamshukla.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
