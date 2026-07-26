@@ -1,6 +1,6 @@
 import { DateHeader } from '../components/Header';
 import  Footer  from '../components/Footer';
-import HomeScreen from '../assets/background.png';
+import HomeScreen from '../assets/background.jpg';
 import IG from '../assets/instagram-white-icon.png'
 import GH from '../assets/github-white-icon.png'
 import LD from '../assets/linkedin-app-white-icon.png'
