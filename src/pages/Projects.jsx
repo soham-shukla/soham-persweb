@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import{ Link} from 'react-router-dom';
 import '../App.css'; 
 
 // project list
@@ -36,8 +37,8 @@ export default function Projects() {
 
 function BentoCard({ title, subtitle, number, link }) {
     return (
-        <motion.a 
-            href={link}
+        <motionLink
+            to= {link}
             style={cardWrapper}
             initial="idle"
             whileHover="hover"
@@ -59,7 +60,7 @@ function BentoCard({ title, subtitle, number, link }) {
                 <h3 className="mukta-malar-semibold" style={cardTitle}>{title}</h3>
                 <span className="mukta-malar-light" style={cardSubtitle}>{subtitle}</span>
             </div>
-        </motion.a>
+        </motionLink>
     );
 }
 

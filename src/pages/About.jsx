@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Background } from '../StyledComponents';
+import { Link } from 'react-router-dom';
 import '../App.css'; 
 import img1 from '../assets/googleoffice.png';
 import img2 from '../assets/IMG_6679.png';
@@ -131,15 +132,15 @@ export default function About() {
                     <div style={menuList}>
                         <div style={menuRow}>
                             <span>what i've done?</span>
-                            <a href="/career" style={menuLink}>see career &rarr;</a>
+                            <Link to="/career" style={menuLink}>see career &rarr;</Link>
                         </div>
                         <div style={menuRow}>
                             <span>what i'm doing?</span>
-                            <a href="/projects" style={menuLink}>see projects &rarr;</a>
+                            <Link to="/projects" style={menuLink}>see projects &rarr;</Link>
                         </div>
                         <div style={menuRow}>
                             <span>where i'm going?</span>
-                            <a href="/contact" style={menuLink}>see contact &rarr;</a>
+                            <Link to="/contact" style={menuLink}>see contact &rarr;</Link>
                         </div>
                     </div>
                 </div>
