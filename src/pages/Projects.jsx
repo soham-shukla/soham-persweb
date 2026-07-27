@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import{ Link} from 'react-router-dom';
 import '../App.css'; 
 
@@ -11,6 +11,8 @@ const projectData = [
     { id: "drivesafe", number: "04", title: "drive-safe", subtitle: "jan 2026 - may 2026", link: "/projects/drivesafe" },
     { id: "bvbrc", number: "05", title: "bvbrc-mcp", subtitle: "jan 2026", link: "/projects/bvbrc" },
 ]
+
+const MotionLink = motion(Link);
 // output 
 
 export default function Projects() {
@@ -37,7 +39,7 @@ export default function Projects() {
 
 function BentoCard({ title, subtitle, number, link }) {
     return (
-        <motionLink
+        <MotionLink
             to= {link}
             style={cardWrapper}
             initial="idle"
@@ -60,7 +62,7 @@ function BentoCard({ title, subtitle, number, link }) {
                 <h3 className="mukta-malar-semibold" style={cardTitle}>{title}</h3>
                 <span className="mukta-malar-light" style={cardSubtitle}>{subtitle}</span>
             </div>
-        </motionLink>
+        </MotionLink>
     );
 }
 
