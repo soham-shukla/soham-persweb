@@ -14,10 +14,10 @@ export default function ProjectDiesel() {
 
             <header style={headerSection}>
                 <span className="mukta-malar-light" style={metaTags}>./projects</span>
-                <h1 className="mukta-malar-bold" style={title}>diesel</h1>
+                <h1 className="mukta-malar-bold" style={title}>omniscient</h1>
                 
                 <div style={actionButtons}>
-                    <a href="https://github.com/soham-shukla/diesel" target="_blank" rel="noreferrer" className="mukta-malar-regular" style={btnStyle}>
+                    <a href="https://github.com/soham-shukla/omniscient" target="_blank" rel="noreferrer" className="mukta-malar-regular" style={btnStyle}>
                         [ github repo ]
                     </a>
                 </div>
@@ -29,7 +29,7 @@ export default function ProjectDiesel() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <img src= {productpage} alt="Diesel Dashboard Interface" style={imageFill} />
+                <img src= {productpage} alt="Omniscient Dashboard Interface" style={imageFill} />
             </motion.div>
 
             <section style={overviewGrid}>
@@ -38,7 +38,7 @@ export default function ProjectDiesel() {
                     <p className="mukta-malar-light" style={bodyText}>
                         A full-stack web application designed to automate e-commerce price tracking, visualize market trends, and provide data-driven shopping advice through an integrated Large Language Model (LLM).
                         <br /><br />
-                        The  objective was to leverage an open source AI agent as a shopping agent. Instead of relying on manual price searches and endless browsing, Diesel autonomously scrapes real-time market data, builds a historical price database, and injects that live context into a local LLM to tell users exactly when and where to buy.
+                        The  objective was to leverage an open source AI agent as a shopping agent. Instead of relying on manual price searches and endless browsing, Omni autonomously scrapes real-time market data, builds a historical price database, and injects that live context into a local LLM to tell users exactly when and where to buy.
                     </p>
                 </div>
 

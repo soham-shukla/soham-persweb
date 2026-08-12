@@ -5,7 +5,7 @@ import '../App.css';
 // project list
 
 const projectData = [
-    { id: "diesel", number: "01", title: "diesel", subtitle: "july 2026", link: "/projects/diesel" },
+    { id: "omniscient", number: "01", title: "omniscient", subtitle: "july 2026", link: "/projects/omniscient" },
     { id: "persweb", number: "02", title: "pers-web", subtitle: "may 2026 - july 2026", link: "/projects/persweb" },
     { id: "wanglab", number: "03", title: "wang-lab", subtitle: "jan 2026 - present", link: "/projects/wanglab" },
     { id: "drivesafe", number: "04", title: "drive-safe", subtitle: "jan 2026 - may 2026", link: "/projects/drivesafe" },
