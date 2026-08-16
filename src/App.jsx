@@ -34,7 +34,7 @@ function Layout(){
         <Route path = "/Contact" element={<Contact/>} />
         <Route path = "/Career" element={<Career/>} />
         <Route path = "/Projects/drivesafe" element = {<DriveSafe/>} />
-        <Route path = "/Projects/diesel" element = {<Diesel/>} />
+        <Route path = "/Projects/omniscient" element = {<Diesel/>} />
         <Route path = "/Projects/wanglab" element = {<WangLab/>} />
         <Route path = "/Projects/persweb" element = {<PersWeb/>} />
         <Route path = "/Projects/bvbrc" element = {<Bvbrc/>} />

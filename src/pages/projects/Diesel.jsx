@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import '../../App.css'; 
 import productpage from '../../assets/dieselhomescreen.png';
+
 export default function ProjectDiesel() {
     return (
         <div style={pageLayout}>
