@@ -47,7 +47,7 @@ Whether it is a broken link, a typo, or a visual glitch on a specific mobile dev
 3. Briefly describe the bug, what page it occurred on, and (if possible) what browser/device you are using. 
 
 ## Author & Contact
-I'm **Soham Shukla**, a Computer Engineering student (Bioengineering minor) at the University of Illinois Urbana-Champaign. I love to design, solve, and learn—always cooking something up to help others and make the world just a little better off.
+I'm Soham, a Computer Engineering student at the University of Illinois Urbana-Champaign.
 
 **For Recruiters** I am actively looking for sophomore hardware, data analysis, and software engineering roles for Spring/ Summer 2027 and forward. If my portfolio aligns with your team's needs, I would love to connect! You can contact me directly through my website or on LinkedIn:
 
