@@ -1,6 +1,6 @@
 import { DateHeader } from '../components/Header';
 import  Footer  from '../components/Footer';
-import HomeScreen from '../assets/bg.png';
+// import HomeScreen from '../assets/bg.png';
 import IG from '../assets/instagram-white-icon.png'
 import GH from '../assets/github-white-icon.png'
 import LD from '../assets/linkedin-app-white-icon.png'
@@ -84,7 +84,7 @@ const fixedBackground = {
     left: 0,
     width: "100vw",
     height: "100vh",
-    backgroundImage: `url(${HomeScreen})`,
+    // backgroundImage: `url(${HomeScreen})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     zIndex: 1, 
